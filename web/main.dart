@@ -109,7 +109,6 @@ void addKey(List<String> args){
     cipher.init(true, ivparams);
   }
 
-  File f;
   int rand;
   do {
     rand = new Random().nextInt(200000);
