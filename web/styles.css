@@ -1,9 +1,69 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 html, body {
-    width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
     font-family: 'Roboto', sans-serif;
+}
+
+#main{
+    position: absolute;
+    left: 40%;
+    top: 40%;
+}
+
+#addForm{
+    display: flex;
+}
+#addFormLabels > div {
+    height: 21px;
+}
+#addFormLabels{
+    width: 105px;
+}
+#addFormInputs{
+    width: 159px;
+}
+#passShow{
+    margin-left: 26px;
+}
+#footer{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    left: 37%;
+}
+@media screen and (max-width: 900px) and (min-width: 650px){
+    #main{
+        left: 30%;
+    }
+    #footer{
+        left: 27%;
+    }
+}
+@media screen and (max-width: 650px) and (min-width: 400px){
+    #main{
+        left: 15%;
+    }
+    #footer{
+        left: 12%;
+    }
+}
+@media screen and (max-width: 400px) and (min-width: 300px){
+    #main{
+        left: 7%;
+    }
+    #footer{
+        left: 1%;
+    }
+}
+@media screen and (max-width: 300px){
+    #main{
+        left: 0;
+    }
+    #footer{
+        left: 0;
+    }
 }

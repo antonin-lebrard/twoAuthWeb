@@ -10,20 +10,39 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>optweb</title>
+    <title>2FA Authenticator</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="main.dart" type="application/dart"></script>
     <script defer src="packages/browser/dart.js"></script>
 </head>
 
 <body>
-  <span>Add key:</span>
-  <input title="add key:" id="addKey" type="text" inputmode="verbatim" maxlength="255">
-  <span>Label of key:</span>
-  <input title="label of key" id="label" type="text" inputmode="verbatim" maxlength="255">
-  <span>Password:</span>
-  <input title="Password:" id="pass" type="password" inputmode="verbatim" maxlength="255">
-  <div id="output"></div>
+    <div id="main">
+        <div id="addForm">
+            <div id="addFormLabels">
+                <div>Add key:</div>
+                <div>Label of key:</div>
+                <div>Password:</div>
+            </div>
+            <div id="addFormInputs">
+                <input title="add key:" id="addKey" type="text" inputmode="verbatim" maxlength="255">
+                <input title="label of key" id="label" type="text" inputmode="verbatim" maxlength="255">
+                <input title="Password:" id="passAdd" type="password" inputmode="verbatim" maxlength="255">
+            </div>
+        </div>
+
+        <div id="showKeysForm">
+            <span>Password:</span>
+            <input title="Password:" id="passShow" type="password" inputmode="verbatim" maxlength="255">
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <div id="footer">
+        <span>code here: </span>
+        <a target="_blank" href="https://github.com/fandegw/twoAuthWeb.git">https://github.com/fandegw/twoAuthWeb.git</a>
+    </div>
 
 </body>
 </html>

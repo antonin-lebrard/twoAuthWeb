@@ -13,7 +13,8 @@ import 'package:cipher/params/key_derivators/scrypt_parameters.dart';
 
 InputElement addKeyInput = querySelector("#addKey");
 InputElement labelInput = querySelector("#label");
-InputElement passwordInput = querySelector("#pass");
+InputElement passwordAddInput = querySelector("#passAdd");
+InputElement passwordShowInput = querySelector("#passShow");
 DivElement out = querySelector("#output");
 
 void main() {
@@ -21,33 +22,43 @@ void main() {
   labelInput.onKeyDown.listen((KeyboardEvent evt){
     if (evt.keyCode == 13) {
       evt.preventDefault();
-      if (labelInput.value == "" || addKeyInput.value == "" || passwordInput.value == "") {
-        print("empty label, key or password value");
-        return;
-      }
-      addKey([passwordInput.value, addKeyInput.value, labelInput.value]);
+      addKeyFunction();
     }
   });
   addKeyInput.onKeyDown.listen((KeyboardEvent evt){
     if (evt.keyCode == 13){
       evt.preventDefault();
-      if (labelInput.value == "" || addKeyInput.value == "" || passwordInput.value == "") {
-        print("empty label, key or password value");
-        return;
-      }
-      addKey([passwordInput.value, addKeyInput.value, labelInput.value]);
+      addKeyFunction();
     }
   });
-  passwordInput.onKeyDown.listen((KeyboardEvent evt){
+  passwordAddInput.onKeyDown.listen((KeyboardEvent evt){
     if (evt.keyCode == 13){
       evt.preventDefault();
-      if (passwordInput.value == "") {
+      addKeyFunction();
+    }
+  });
+  passwordShowInput.onKeyDown.listen((KeyboardEvent evt){
+    if (evt.keyCode == 13){
+      evt.preventDefault();
+      if (passwordShowInput.value == "") {
         print("empty password value");
         return;
       }
-      displayPins(passwordInput.value);
+      displayPins(passwordShowInput.value);
+      passwordShowInput.value = "";
     }
   });
+}
+
+void addKeyFunction(){
+  if (labelInput.value == "" || addKeyInput.value == "" || passwordAddInput.value == "") {
+    print("empty label, key or password value");
+    return;
+  }
+  addKey([passwordAddInput.value, addKeyInput.value, labelInput.value]);
+  passwordAddInput.value = "";
+  addKeyInput.value = "";
+  labelInput.value = "";
 }
 
 
